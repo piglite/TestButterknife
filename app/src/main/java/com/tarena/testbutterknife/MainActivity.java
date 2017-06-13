@@ -1,6 +1,7 @@
 package com.tarena.testbutterknife;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -24,5 +25,12 @@ public class MainActivity extends Activity {
     @OnClick(R.id.tv_main)
     public void show(View view){
         Toast.makeText(this, "toast", Toast.LENGTH_SHORT).show();
+    }
+
+    @OnClick(R.id.btn_main)
+    public void jump(View view){
+        Intent intent = new Intent(this,SecondActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
